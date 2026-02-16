@@ -3,27 +3,26 @@ package com.gla.methods;
 
 public class Circle {
 
-    private double radius;
+    double radius;
 
-    public Circle() {
-        this(1.0);
+    double area() {
+        return Math.PI * radius * radius;
     }
 
-    public Circle(double radius) {
-        this.radius = radius;
+    double circumference() {
+        return 2 * Math.PI * radius;
     }
 
-    public void display() {
-        System.out.println("Radius: " + radius);
+    void display() {
+        System.out.println("Area: " + area());
+        System.out.println("Circumference: " + circumference());
     }
 
     public static void main(String[] args) {
 
-        Circle c1 = new Circle();
-        Circle c2 = new Circle(5);
+        Circle c = new Circle();
+        c.radius = 7;
 
-        c1.display();
-        c2.display();
+        c.display();
     }
-    
 }
