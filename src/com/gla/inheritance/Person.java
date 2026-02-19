@@ -1,84 +1,61 @@
 
  package com.gla.inheritance;
 
+interface Worker {
+    void performDuties();
+}
+
 class Person {
 
     String name;
-    int age;
+    int id;
 
-    Person(String name, int age) {
+    Person(String name, int id) {
         this.name = name;
-        this.age = age;
+        this.id = id;
     }
 
     void displayBasicInfo() {
         System.out.println("Name: " + name);
-        System.out.println("Age: " + age);
+        System.out.println("ID: " + id);
     }
 }
 
-class Teacher extends Person {
+class Chef extends Person implements Worker {
 
-    String subject;
-
-    Teacher(String name, int age, String subject) {
-        super(name, age);
-        this.subject = subject;
+    Chef(String name, int id) {
+        super(name, id);
     }
 
-    void displayRole() {
-        System.out.println("Role: Teacher");
-        displayBasicInfo();
-        System.out.println("Subject: " + subject);
+    public void performDuties() {
+        System.out.println("Chef prepares food");
     }
 }
 
-class Student extends Person {
+class Waiter extends Person implements Worker {
 
-    String grade;
-
-    Student(String name, int age, String grade) {
-        super(name, age);
-        this.grade = grade;
+    Waiter(String name, int id) {
+        super(name, id);
     }
 
-    void displayRole() {
-        System.out.println("Role: Student");
-        displayBasicInfo();
-        System.out.println("Grade: " + grade);
+    public void performDuties() {
+        System.out.println("Waiter serves customers");
     }
 }
 
-class Staff extends Person {
-
-    String department;
-
-    Staff(String name, int age, String department) {
-        super(name, age);
-        this.department = department;
-    }
-
-    void displayRole() {
-        System.out.println("Role: Staff");
-        displayBasicInfo();
-        System.out.println("Department: " + department);
-    }
-}
-
-public class SchoolTest {
+public class RestaurantTest {
 
     public static void main(String[] args) {
 
-        Teacher t = new Teacher("Amit", 35, "Mathematics");
-        Student s = new Student("Rahul", 16, "10th Grade");
-        Staff st = new Staff("Meena", 40, "Administration");
+        Chef chef = new Chef("Amit", 101);
+        Waiter waiter = new Waiter("Rahul", 102);
 
-        t.displayRole();
+        chef.displayBasicInfo();
+        chef.performDuties();
+
         System.out.println();
 
-        s.displayRole();
-        System.out.println();
-
-        st.displayRole();
+        waiter.displayBasicInfo();
+        waiter.performDuties();
     }
 }
