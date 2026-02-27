@@ -1,4 +1,3 @@
-
 abstract class Patient {
 
     private int patientId;

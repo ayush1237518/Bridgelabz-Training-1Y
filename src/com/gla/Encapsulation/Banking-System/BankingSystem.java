@@ -1,5 +1,5 @@
 
-import java.util.ArrayList;
+ import java.util.ArrayList;
 import java.util.List;
 
 public class BankingSystem {
@@ -20,7 +20,7 @@ public class BankingSystem {
         accounts.add(s);
         accounts.add(c);
 
-
+        
         for (BankAccount acc : accounts) {
 
             acc.displayAccountDetails();
@@ -35,5 +35,5 @@ public class BankingSystem {
         }
 
     }
-
+    
 }

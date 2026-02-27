@@ -14,7 +14,7 @@ class CurrentAccount extends BankAccount implements Loanable {
         return getBalance() * INTEREST_RATE;
     }
 
-
+    
     @Override
     public void applyForLoan(double amount) {
         loanAmount = amount;
@@ -24,5 +24,5 @@ class CurrentAccount extends BankAccount implements Loanable {
     public boolean calculateLoanEligibility() {
         return getBalance() > loanAmount;
     }
-
+    
 }

@@ -1,5 +1,5 @@
 
-class SavingsAccount extends BankAccount implements Loanable {
+ class SavingsAccount extends BankAccount implements Loanable {
 
     private static final double INTEREST_RATE = 0.04;  // 4%
     private double loanAmount;
@@ -8,7 +8,7 @@ class SavingsAccount extends BankAccount implements Loanable {
         super(accNo, name, balance);
     }
 
-
+    
     @Override
     public double calculateInterest() {
         return getBalance() * INTEREST_RATE;
@@ -24,5 +24,5 @@ class SavingsAccount extends BankAccount implements Loanable {
     public boolean calculateLoanEligibility() {
         return getBalance() > loanAmount * 0.5;
     }
-
+    
 }
