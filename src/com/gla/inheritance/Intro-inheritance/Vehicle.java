@@ -1,7 +1,7 @@
 
  package com.gla.inheritance;
 
-class Vehicles {
+class Vehicle {
 
     int maxSpeed;
     String fuelType;
