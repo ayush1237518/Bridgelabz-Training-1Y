@@ -1,4 +1,3 @@
-
 package com.gla.exception-handling.problem6;
 
 public class InterestCalculator {
