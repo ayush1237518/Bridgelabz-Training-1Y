@@ -1,9 +1,9 @@
 package com.gla;
 
-public class Category {
+public class Branch {
     String name;
 
-    public Category(String name) {
+    public Branch(String name) {
         this.name = name;
     }
 }

@@ -1,22 +1,35 @@
 package com.gla;
 
 public class Book {
-    private String title;
-    private Category category;
+    private final int id;
+    private final String name;
+    private final String author;
+    private boolean isIssued;
 
-    public String getTitle() {
-        return title;
+    public Book(int id, String name, String author) {
+        this.id = id;
+        this.name = name;
+        this.author = author;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public int getId() {
+        return id;
     }
 
-    public Category getCategory() {
-        return category;
+    public void display() {
+        System.out.println(id + " | " + name + " | " + author);
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public boolean isIssued() {
+        return isIssued;
+    }
+
+    public void setIssued(boolean issued) {
+        isIssued = issued;
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + author;
     }
 }
