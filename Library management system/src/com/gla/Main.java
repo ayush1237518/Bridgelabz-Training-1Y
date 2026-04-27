@@ -8,7 +8,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         LibraryService libraryService = new LibraryService();
 
-        // ---------------- MAIN MENU ----------------
+
         while (true) {
             System.out.println("\n--- MAIN MENU ---");
             System.out.println("1. Admin");
@@ -33,7 +33,6 @@ public class Main {
         }
     }
 
-    // ---------------- ADMIN MENU ----------------
     public static void adminMenu(Scanner sc, LibraryService service) {
         while (true) {
             System.out.println("\n--- ADMIN MENU ---");
@@ -62,7 +61,6 @@ public class Main {
         }
     }
 
-    // ---------------- STUDENT MENU ----------------
     public static void studentMenu(Scanner sc, LibraryService service) {
         while (true) {
             System.out.println("\n--- STUDENT MENU ---");
