@@ -1,13 +1,14 @@
 package com.gla;
+
+
 public class DeliveryCheckpoint extends Checkpoint {
-    public DeliveryCheckpoint(String checkpointId,
-                              String locationName,
+
+    public DeliveryCheckpoint(String checkpointId, String locationName,
                               double distanceFromLast,
-                              double expectedDuration,
-                              double actualDuration) {
-        super(checkpointId, locationName,
-                distanceFromLast, expectedDuration, actualDuration);
+                              double expectedDuration, double actualDuration) {
+        super(checkpointId, locationName, distanceFromLast, expectedDuration, actualDuration);
     }
+
 
     @Override
     public boolean isCritical() {
@@ -16,13 +17,12 @@ public class DeliveryCheckpoint extends Checkpoint {
 
     @Override
     public String getType() {
-        return "DeliveryCheckpoint";
+        return "Delivery";
     }
 
     @Override
     public double calculatePenalty() {
         if (!isDelayed()) return 0.0;
-        return getDelay() * 2.0;
+        return delayMinutes() * 2;
     }
 }
-

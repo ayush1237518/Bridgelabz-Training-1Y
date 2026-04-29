@@ -1,23 +1,26 @@
 package com.gla;
+
 public class FuelCheckpoint extends Checkpoint {
+
     private static final double FLAT_PENALTY = 10.0;
-    public FuelCheckpoint(String checkpointId,
-                          String locationName,
+
+    public FuelCheckpoint(String checkpointId, String locationName,
                           double distanceFromLast,
-                          double expectedDuration,
-                          double actualDuration) {
-        super(checkpointId, locationName,
-                distanceFromLast, expectedDuration, actualDuration);
+                          double expectedDuration, double actualDuration) {
+        super(checkpointId, locationName, distanceFromLast, expectedDuration, actualDuration);
     }
+
+
     @Override
     public boolean isCritical() {
-        return true;
+        return true; // fuel stops are always critical
     }
 
     @Override
     public String getType() {
-        return "FuelCheckpoint";
+        return "Fuel";
     }
+
 
     @Override
     public double calculatePenalty() {
